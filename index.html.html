@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Microsystems x Apple</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&amp;display=swap">
+<style>
+body{margin:0}
+button{font-family:inherit}
+.seg{transition:background .15s ease}
+.seg:hover{background:rgba(0,0,0,.06)}
+.btn{transition:transform .15s ease, background .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-call:hover{background:#0077ED !important}
+.btn-wa:hover{background:#E8E8ED !important}
+</style>
+</helmet>
+<div style="width: 1080px; height: 1350px; box-sizing: border-box; background: #F5F5F7; font-family: -apple-system, 'SF Pro Display', 'DM Sans', sans-serif; color: #1D1D1F; display: flex; flex-direction: column; overflow: hidden">
+
+<div style="background: #ffffff; border-bottom: 1px solid #D2D2D7; padding: 16px 72px; display: flex; justify-content: space-between; align-items: center">
+<img src="./assets/4ec56e23f16e7b4fbf61cfaced6750b2.png" alt="Microsystems" style="height: 60px; width: auto; display: block">
+<div style="font-size: 20px; font-weight: 700; color: #1D1D1F">Now available</div>
+</div>
+
+<div style="padding: 44px 72px 0 72px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px">
+<div style="font-size: 24px; font-weight: 700; color: #BF4800">New at Microsystems</div>
+<h1 style="margin: 0; font-size: 86px; line-height: 1.05; font-weight: 800; letter-spacing: -2.5px">Apple.<br>Now for your business.</h1>
+<div style="font-size: 27px; line-height: 1.4; font-weight: 500; color: #515154; margin-top: 8px">iPhone, MacBook, iMac and Mac mini, from the team you already trust.</div>
+</div>
+
+<div style="display: flex; justify-content: center; padding: 28px 72px 0 72px">
+<div style="background: #E8E8ED; border-radius: 999px; padding: 6px; display: flex; gap: 4px">
+<sc-for list="{{items}}" as="item" hint-placeholder-count="4">
+<sc-if value="{{item.selected}}" hint-placeholder-val="{{ false }}">
+<button onClick="{{item.pick}}" style="border: 0; cursor: pointer; background: #ffffff; color: #1D1D1F; font-weight: 800; font-size: 22px; padding: 0 28px; min-height: 52px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,.16)">{{item.label}}</button>
+</sc-if>
+<sc-if value="{{item.notSelected}}" hint-placeholder-val="{{ true }}">
+<button class="seg" onClick="{{item.pick}}" style="border: 0; cursor: pointer; background: transparent; color: #515154; font-weight: 700; font-size: 22px; padding: 0 28px; min-height: 52px; border-radius: 999px">{{item.label}}</button>
+</sc-if>
+</sc-for>
+</div>
+</div>
+
+<div style="margin: 24px 72px 0 72px; background: #ffffff; border-radius: 36px; padding: 28px 24px 26px 24px; display: flex; flex-direction: column; align-items: center; gap: 6px">
+<img src="{{current.img}}" alt="{{current.label}}" style="height: 360px; width: 100%; object-fit: contain; display: block">
+<div style="font-size: 40px; font-weight: 800; letter-spacing: -1px; margin-top: 10px">{{current.label}}</div>
+<div style="font-size: 24px; font-weight: 500; color: #515154">{{current.tagline}}</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 22px 72px 0 72px; border-top: 1px solid #D2D2D7; border-bottom: 1px solid #D2D2D7; padding: 18px 0">
+<div style="text-align: center; font-weight: 800; font-size: 21px">Bulk pricing</div>
+<div style="text-align: center; font-weight: 800; font-size: 21px; border-left: 1px solid #D2D2D7">GST invoice</div>
+<div style="text-align: center; font-weight: 800; font-size: 21px; border-left: 1px solid #D2D2D7">Quick delivery</div>
+<div style="text-align: center; font-weight: 800; font-size: 21px; border-left: 1px solid #D2D2D7">After-sales support</div>
+</div>
+
+<div style="margin-top: auto; flex-shrink: 0; background: #1D1D1F; color: #ffffff; padding: 30px 72px 34px 72px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px">
+<div style="font-size: 36px; font-weight: 800; letter-spacing: -0.8px">Get your corporate quote today.</div>
+<div style="display: flex; gap: 16px">
+<a class="btn btn-call" href="tel:+919894659300" style="background: {{accent}}; color: #ffffff; text-decoration: none; font-weight: 800; font-size: 23px; padding: 0 34px; min-height: 58px; display: flex; align-items: center; border-radius: 999px; box-sizing: border-box">Call: 9894659300</a>
+<a class="btn btn-wa" href="https://wa.me/919597622100" style="background: #ffffff; color: #1D1D1F; text-decoration: none; font-weight: 800; font-size: 23px; padding: 0 34px; min-height: 58px; display: flex; align-items: center; border-radius: 999px; box-sizing: border-box">WhatsApp: 9597622100</a>
+</div>
+<div style="font-size: 19px; line-height: 1.4; color: #D2D2D7">133, First Floor, New Scheme Road, PN Palayam, Katoor, Coimbatore, Tamil Nadu</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#0071E3"},"$preview":{"width":1080,"height":1350}}'>
+class Component extends DCLogic {
+renderVals() {
+const base = [
+{ id: 'iphone', label: 'iPhone', tagline: 'Business-ready, for every team member.', img: './assets/b47dbbbe24f795836731b0dab7a021da.png' },
+{ id: 'macbook', label: 'MacBook', tagline: 'Power and portability for every desk.', img: './assets/20c1c9c5c4e35737f5b80251cccc97c6.png' },
+{ id: 'imac', label: 'iMac', tagline: 'The all-in-one for your office.', img: './assets/3225d63f168d085c8dfaf281e85c6627.png' },
+{ id: 'macmini', label: 'Mac mini', tagline: 'Compact desktop, serious performance.', img: './assets/c6702bb610fa361f7f953c5294b0cf5b.png' }
+];
+const st = this.state || {};
+const picked = st.picked || 'macbook';
+const items = base.map((x) => ({
+...x,
+selected: x.id === picked,
+notSelected: x.id !== picked,
+pick: () => this.setState({ picked: x.id })
+}));
+return {
+accent: this.props.accent ?? '#0071E3',
+items,
+current: items.find((x) => x.selected) || items[1]
+};
+}
+}
+</script>
+</body>
+</html>
